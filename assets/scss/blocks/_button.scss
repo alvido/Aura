@@ -1,6 +1,5 @@
 .button {
     @include reset-button;
-    min-width: 140px;
     height: var(--button-height);
     text-transform: capitalize;
 
@@ -9,19 +8,18 @@
     justify-content: center;
     gap: 8px;
 
-    padding: 0 20px;
-    @include fluid-text(16, 16);
-    font-weight: 500;
-    border-radius: var(--border-radius-large);
+    padding: 0 30px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: var(--border-radius);
 
     color: var(--color-white);
-    background: var(--color-black);
-    border: 2px solid var(--color-black);
+    background: var(--color-dark-red);
+    border: 2px solid var(--color-dark-red);
 
     @include hover {
-        color: var(--color-blue);
-        background: var(--color-transparent);
-
+        color: var(--color-black);
+    background: var(--color-white);
     }
 }
 

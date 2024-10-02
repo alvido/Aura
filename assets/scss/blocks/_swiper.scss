@@ -1,3 +1,13 @@
+.swiper {
+    z-index: 0;
+
+    &-slide {
+        & img {
+            width: 100%;
+        }
+    }
+}
+
 .swiper__navigation {
     display: flex;
     align-items: center;
@@ -52,36 +62,44 @@
 }
 
 .swiper__navigation-buttons {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    z-index: 1;
-
-    @include mobile {
-        display: none;
-        position: static;
-    }
 
     .swiper-button-next,
     .swiper-button-prev {
-        position: static;
         margin: 0;
-        width: 48px;
-        height: 48px;
-        background: var(--color-blue);
+        top: 50%;
+        translate: 0 -50%;
+        width: 54px;
+        height: 54px;
+
+        @include phone {
+            width: 20px;
+            height: 20px;
+        }
 
         &:after {
             content: '';
             width: 100%;
             height: 100%;
-            background: url(../images/icon/arrow-left.svg) no-repeat center;
+            background: url(../images/icons/arrow-right.svg) no-repeat center;
+            background-size: contain;
         }
     }
 
     .swiper-button-next {
+        right: 60px;
+
+        @include mobile {
+            right: 20px;
+        }
+    }
+
+    .swiper-button-prev {
+        left: 60px;
+
+        @include mobile {
+            left: 20px;
+        }
+
         &::after {
             rotate: 180deg;
         }

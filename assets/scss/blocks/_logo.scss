@@ -33,6 +33,11 @@
     @include hover {
         &::after {
             background: var(--color-red);
+        }
+    }
+
+    &.active {
+        &::after {
             rotate: 180deg;
         }
 

@@ -1,3 +1,169 @@
 .footer {
-    padding: 10px;
+    position: relative;
+    padding: 44px 0 78px;
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+
+    @include mobile {
+        gap: 10px;
+        padding: 28px 0 30px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0%;
+        left: 0;
+        right: 0;
+        height: 10px;
+        background: linear-gradient(to right, #760000, #9D0606, #B90707, #CE0101);
+
+        @include mobile {
+            height: 8px;
+        }
+    }
+
+    & h2 {
+        @include fluid-text(46, 24);
+        font-weight: 500;
+    }
+
+    &__logo {
+        margin: 0 auto;
+
+        & img {
+            max-width: none;
+            width: 220px;
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        @include tablet {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px 20px;
+        }
+
+        @include mobile {
+            display: flex;
+            padding: 0 30px;
+        }
+
+        & .col {
+            max-width: 350px;
+
+            @include mobile {
+                max-width: none;
+                width: 100%;
+            }
+
+            & p {
+                font-weight: 700;
+
+                & span {
+                    display: block;
+                    margin-top: 10px;
+                    font-size: 13px;
+                }
+            }
+
+            & .button {
+                @include mobile {
+                    order: -1;
+                    width: 100%;
+                    max-width: 330px;
+                    align-self: center;
+                }
+            }
+
+            & .address {
+                display: block;
+                margin-bottom: 28px;
+
+                & ul {
+                    padding-left: 30px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 17px;
+
+                    & li {
+                        &::before {
+                            left: -30px;
+                            right: auto;
+                        }
+                    }
+                }
+            }
+        }
+
+        & h5 {
+            text-transform: uppercase;
+
+            @include mobile {
+                margin-top: 20px;
+                font-size: 24px;
+                font-weight: 600;
+            }
+        }
+
+        & .group {
+            margin: 17px 0 25px;
+            justify-content: flex-start;
+
+            @include mobile {
+                margin: 26px 0 0 0;
+            }
+        }
+    }
+
+    &__link {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 20px;
+
+        @include mobile {
+            padding-left: 30px;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0px;
+                top: 0;
+                width: 20px;
+                height: 20px;
+                background: url(../images/icons/phone.svg) no-repeat center;
+            }
+        }
+    }
+
+    &__mail {
+        @include mobile {
+            position: relative;
+            margin-left: 30px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: -30px;
+                top: 0;
+                width: 20px;
+                height: 20px;
+                background: url(../images/icons/mail.svg) no-repeat center;
+            }
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        text-transform: capitalize;
+    }
 }

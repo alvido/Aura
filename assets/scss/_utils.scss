@@ -63,3 +63,28 @@ section {
     justify-content: flex-end;
     gap: 10px;
 }
+
+.decor-left {
+    margin-bottom: 10px;
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+
+    @include mobile {
+        justify-content: center;
+    }
+
+    &::before {
+        content: '';
+        width: 30px;
+        height: 35px;
+        background: url(../images/arka.svg) no-repeat center;
+        background-size: contain;
+
+        @include mobile {
+            width: 17px;
+            height: 22px;
+        }
+    }
+}

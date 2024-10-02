@@ -7,6 +7,7 @@ $container: 1150;
     --color-black: #000000;
     --color-white: #ffffff;
     --color-white-alt: #F9F9F9;
+    --color-gray: #D9D9D9;
 
     --color-dark-red: #760000;
     --color-red: #CE0101;
@@ -18,8 +19,8 @@ $container: 1150;
     /*border*/
     --border: 2px solid var(--color-black);
     --border-radius: 16px;
-    --border-radius-small: 10px;
-    --border-radius-large: 30px;
+    --border-radius-small: 8px;
+    --border-radius-large: 32px;
     /*border*/
 
     /*body*/
@@ -28,12 +29,12 @@ $container: 1150;
     --container-width: #{$container}px;
     --container-padding-x: 10px;
 
-    --section-padding-y: 65px;
+    --section-padding-y: clamp(1.375rem, 0.378rem + 4.43vw, 4.063rem);
     /*body*/
 
     /*button*/
     --input-height: 56px;
-    --button-height: 56px;
+    --button-height: 46px;
     --icon-button-height: 30px;
 
     --transition-duration: 0.3s;

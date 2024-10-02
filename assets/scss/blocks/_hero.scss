@@ -1,3 +1,68 @@
 .hero {
+    padding: 0;
 
+    @include tablet {
+        margin-top: 14px;
+    }
+
+    & .swiper-slide {
+        border-radius: var(--border-radius-large);
+        overflow: hidden;
+
+        @include mobile {
+            border-radius: var(--border-radius);
+        }
+
+        & img {
+            width: 100%;
+        }
+
+        & h2 {
+            position: absolute;
+            bottom: 90px;
+            left: 80px;
+            font-family: "Montserrat Alternates";
+            @include fluid-text(64, 20);
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: 0.09em;
+            color: var(--color-white);
+            max-width: 620px;
+            text-transform: uppercase;
+
+            @include mobile {
+                left: 40px;
+                bottom: 60px;
+            }
+
+            @include phone {
+                left: 16px;
+                bottom: 42px;
+            }
+        }
+    }
+
+    & .swiper-pagination {
+        gap: 10px;
+        position: absolute;
+        left: 50%;
+        bottom: 40px;
+        translate: -50% 0;
+        padding: 0;
+
+        @include mobile {
+            bottom: 13px;
+        }
+
+        &-bullet {
+            width: 10px;
+            height: 10px;
+            background: var(--color-gray);
+            opacity: 1;
+
+            &-active {
+                background: var(--color-dark-red);
+            }
+        }
+    }
 }

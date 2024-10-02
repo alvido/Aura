@@ -1,25 +1,15 @@
 //width main container
-$container: 1320;
+$container: 1150;
 
 :root {
 
     /*colors*/
-    --color-black: #030A16;
+    --color-black: #000000;
     --color-white: #ffffff;
     --color-white-alt: #F9F9F9;
 
-    --color-blue: #1397D6;
-    --color-red: #FD5454;
-
-    --category-blue: #3A8DFF;
-    --category-purple: #A23DFF;
-    --category-orange: #FF8C42;
-
-    --color-gray-dark: #667085;
-    --color-gray: #A6A6A6;
-    --color-gray-alt: #E5E3DF;
-
-
+    --color-dark-red: #760000;
+    --color-red: #CE0101;
 
     --color-transparent: transparent;
     --color-shadow: rgba(22, 28, 45, 0.05);
@@ -33,12 +23,12 @@ $container: 1320;
     /*border*/
 
     /*body*/
-    --font-family-base: "AvenirNextCyr", serif;
+    --font-family-base: "Montserrat", sans-serif;
 
     --container-width: #{$container}px;
-    --container-padding-x: clamp(1.25rem, -5.519rem + 10.58vw, 4rem);
+    --container-padding-x: 10px;
 
-    --section-padding-y: clamp(3rem, 1.195rem + 7.7vw, 8.125rem);
+    --section-padding-y: 65px;
     /*body*/
 
     /*button*/

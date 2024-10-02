@@ -23,29 +23,13 @@
         background: var(--color-transparent);
 
     }
+}
 
-    &--white {
-        min-width: 163px;
-        color: var(--color-black);
-        background: var(--color-white);
-        border-color: var(--color-white);
-
-        @include hover {
-            color: var(--color-white);
-            background: transparent;
-        }
-    }
-
-    &--transparent {
-        min-width: 163px;
-        font-size: 16px;
-        color: var(--color-white);
-        background: var(--color-transparent);
-        border: 2px solid var(--color-white);
-
-        @include hover {
-            color: var(--color-black);
-            background: var(--color-white);
-        }
+.icon {
+    @include reset-button;
+    @include flex-center;
+    cursor: pointer;
+    @include hover {
+        color: var(--color-red);
     }
 }

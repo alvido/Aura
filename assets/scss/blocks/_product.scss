@@ -1,0 +1,188 @@
+.product {
+    padding-top: 24px;
+    display: flex;
+    gap: 27px;
+
+    @include tablet {
+        flex-direction: column;
+    }
+
+    & .col {
+        width: 50%;
+
+        & h4 {
+            font-size: 18px;
+        }
+
+        @include tablet {
+            width: 100%;
+        }
+    }
+
+    &__gallery {
+        position: relative;
+
+        @include tablet {
+            display: flex;
+            gap: 12px;
+        }
+
+        @include phone {
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        & .wishlist {
+            position: absolute;
+            top: 22px;
+            right: 25px;
+            width: 30px;
+            height: 30px;
+
+            @include tablet {
+                right: auto;
+                left: 25px;
+            }
+
+            @include phone {
+                left: auto;
+                right: 25px;
+            }
+
+            &::after {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        & img {
+            width: 100%;
+
+            border-radius: var(--border-radius);
+
+            @include tablet {
+                width: 50%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            @include phone {
+                width: 100%;
+            }
+
+        }
+    }
+
+    &__thumbnails {
+        margin-top: 23px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+
+        @include tablet {
+            margin: 0;
+            width: 50%;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include phone {
+            width: 100%;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 6px;
+        }
+
+        & img {
+            width: 100%;
+
+            @include phone {
+                border-radius: var(--border-radius-small);
+            }
+        }
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        line-height: 1.5;
+        margin: 30px 0;
+
+        @include phone {
+            margin: 15px 0;
+        }
+    }
+
+    & .price {
+        display: block;
+        margin-top: 30px;
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: -0.022em;
+
+        @include phone {
+            margin-top: 15px;
+        }
+    }
+
+    &__buttons {
+        margin-top: 32px;
+        display: flex;
+        gap: 22px;
+
+        @include phone {
+            margin-top: 15px;
+            flex-direction: column;
+        }
+
+        & .button {
+            padding: 0 20px;
+
+            @include phone {
+                width: 100%;
+            }
+        }
+
+    }
+}
+
+.request {
+    &__list {
+        margin-top: 23px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 23px;
+
+        @include tablet {
+            margin-top: 12px;
+            gap: 12px;
+        }
+
+        @include mobile {
+            grid-template-columns: repeat(2, 1fr);
+
+        }
+
+        & li {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+
+            & .wishlist {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+
+            & img {
+                width: 100%;
+                border-radius: var(--border-radius);
+            }
+
+            & h5 {
+                text-align: center;
+            }
+        }
+    }
+}

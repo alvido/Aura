@@ -77,7 +77,24 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+//
 
+// wishlist //
+document.addEventListener("DOMContentLoaded", function () {
+  // Выбираем все элементы с классом "has-children"
+  let wishlist = document.querySelectorAll(".wishlist");
+
+  // Если такие элементы существуют, добавляем обработчик события
+  if (wishlist) {
+    wishlist.forEach((wish) => {
+      // Обработчик клика по элементу "has-children"
+      wish.addEventListener("click", function (e) {
+        e.stopPropagation(); // Останавливаем всплытие события, чтобы оно не доходило до документа
+        this.classList.toggle("wish");
+      });
+    });
+  }
+});
 //
 
 //swiper
@@ -140,8 +157,8 @@ document.addEventListener("DOMContentLoaded", function () {
         clickable: true,
       },
       navigation: {
-        nextEl: ".hero-button-next",
-        prevEl: ".hero-button-prev",
+        // nextEl: ".hero-button-next",
+        // prevEl: ".hero-button-prev",
       },
       breakpoints: {
         320: {
@@ -152,8 +169,88 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Инициализация слайдеров
+  if (document.querySelector("#work")) {
+    new Swiper("#work", {
+      observer: true,
+      observeParents: true,
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".work-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".work-button-next",
+        prevEl: ".work-button-prev",
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 2.5,
+          spaceBetween: 3,
+        },
+        561: {
+          slidesPerView: 3,
+          spaceBetween: 6,
+        },
+      },
+    });
+  }
+
   // Инициализация слайдеров для других секций
   initSwiper("#categories", "", ".categories-button-prev", ".categories-button-next");
 });
 
 // swiper
+
+
+//article
+document.addEventListener("DOMContentLoaded", function () {
+  // Выбираем все элементы с классом "has-children"
+  let about = document.querySelector(".about");
+  let unfold = document.querySelector(".unfold");
+
+  // Если такие элементы существуют, добавляем обработчик события
+  if (unfold) {
+    unfold.addEventListener("click", function (e) {
+      e.stopPropagation(); // Останавливаем всплытие события, чтобы оно не доходило до документа
+      about.classList.toggle("full");
+    });
+  }
+});
+//
+
+//modal
+// Получаем элементы
+const modal = document.getElementById('modal');
+const openModalBtn = document.querySelectorAll('.callback');
+const closeModalBtn = document.querySelector('.close');
+const body = document.querySelector('body');
+
+// Открытие модального окна
+openModalBtn.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    modal.style.display = 'flex'; // Показываем модальное окно
+    body.classList.add("lock"); // Переключаем класс активности навигации
+  });
+});
+
+
+// Закрытие модального окна
+closeModalBtn.addEventListener('click', () => {
+  modal.style.display = 'none';
+  body.classList.remove("lock"); // Переключаем класс активности навигации
+});
+
+// Закрытие окна при клике вне модального содержимого
+window.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.style.display = 'none';
+    body.classList.remove("lock"); // Переключаем класс активности навигации
+  }
+});
+
+//

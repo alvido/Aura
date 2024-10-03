@@ -1,0 +1,45 @@
+.breadcrumbs {
+
+    @include tablet {
+        margin-top: 15px;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        font-weight: 500;
+        letter-spacing: -0.022em;
+
+        & li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--color-dark-gray);
+
+            &:last-child {
+                &::after {
+                    display: none;
+                }
+            }
+
+            &::after {
+                content: '';
+                display: inline-block;
+                min-width: 12px;
+                height: 12px;
+                background-color: var(--color-dark-gray);
+                mask: url('../images/icons/arrow-right.svg') no-repeat center;
+                -webkit-mask: url('../images/icons/arrow-right.svg') no-repeat center;
+                mask-size: contain;
+                -webkit-mask-size: contain;
+            }
+
+            & a {
+                @include hover {
+                    color: var(--color-blue);
+                }
+            }
+        }
+    }
+}

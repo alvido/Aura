@@ -1,7 +1,7 @@
 .navigation {
 
     @include tablet {
-        padding: 40px 24px;
+        padding: 60px 24px;
         position: absolute;
         top: 0%;
         left: 0;
@@ -11,6 +11,7 @@
         opacity: 0;
         transition: all .3s ease;
         background: var(--color-white);
+        overflow: auto;
 
         &.navigation--active {
             top: 0%;
@@ -29,6 +30,7 @@
         }
 
         & li {
+
             & a {
                 position: relative;
                 padding: 14px 0;
@@ -44,6 +46,11 @@
                     height: 3px;
                     background: var(--color-red);
                     transition-duration: var(--transition-duration);
+
+                    @include tablet {
+                        bottom: auto;
+                        top: 100%;
+                    }
                 }
 
                 @include hover {
@@ -53,7 +60,73 @@
                         width: 100%;
                     }
                 }
+
+                @include tablet {
+                    padding: 0;
+                }
             }
         }
+    }
+
+    & .mobile-contact,
+    & .mobile-language,
+    & .mobile-social {
+        display: none;
+
+        @include tablet {
+            display: flex;
+        }
+    }
+
+    & .mobile-contact {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px;
+        gap: 10px;
+
+        & .tel {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            &::before {
+                content: '';
+                display: block;
+                width: 20px;
+                height: 20px;
+                background: url(../images/icons/phone.svg) no-repeat center/ cover;
+            }
+        }
+
+        & .mail {
+            margin-top: 10px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            &::before {
+                content: '';
+                display: block;
+                width: 20px;
+                height: 20px;
+                background: url(../images/icons/mail.svg) no-repeat center/ cover;
+            }
+        }
+    }
+
+    & .mobile-social {
+        margin-top: 30px;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    & .mobile-language {
+        margin-top: 30px;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
     }
 }

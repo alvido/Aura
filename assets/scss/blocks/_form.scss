@@ -3,7 +3,7 @@ form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 24px;
+    gap: 20px;
 
     @include mobile {
         gap: 20px;
@@ -12,13 +12,12 @@ form {
     label {
         width: 100%;
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
         align-items: flex-start;
-        gap: 8px;
-        font-size: 14px;
-        font-weight: 500;
+        gap: 6px;
+        font-size: 16px;
+        font-weight: 400;
         line-height: 1.4;
-        text-transform: capitalize;
 
         &.wrap {
             flex-direction: column;
@@ -52,26 +51,26 @@ form {
     select,
     textarea {
         margin: 0;
-        font-family: "AvenirNextCyr";
         font-size: 16px;
-        font-weight: 500;
+        font-weight: 400;
         line-height: 1.5;
 
         outline: none;
         width: 100%;
         height: var(--input-height);
-        padding: 16px 24px;
+        padding: 10px 15px;
 
 
         color: var(--color-black);
-        border: 1px solid var(--color-gray-alt);
+        border: 1px solid var(--color-gray);
+        border-radius: var(--border-radius);
 
         &::placeholder {
             color: var(--color-gray);
         }
 
         &:focus-visible {
-            border: 1px solid var(--color-blue);
+            border: 1px solid var(--color-red);
         }
 
         &[required]~p::after {

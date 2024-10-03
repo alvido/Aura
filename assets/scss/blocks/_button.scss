@@ -19,7 +19,7 @@
 
     @include hover {
         color: var(--color-black);
-    background: var(--color-white);
+        background: var(--color-white);
     }
 }
 
@@ -27,7 +27,106 @@
     @include reset-button;
     @include flex-center;
     cursor: pointer;
+
     @include hover {
         color: var(--color-red);
+    }
+
+    &.wishlist {
+        width: 20px;
+        height: 20px;
+        position: relative;
+        font-size: 0;
+
+        &.wish {
+            &::after {
+                background: var(--color-red);
+                mask: url(../images/icons/heart-full.svg) no-repeat center;
+                -webkit-mask: url(../images/icons/heart-full.svg) no-repeat center;
+            }
+        }
+
+        &::after {
+            content: "";
+            display: inline-block;
+            min-width: 20px;
+            height: 20px;
+            background: var(--color-black);
+            mask: url(../images/icons/heart.svg) no-repeat center;
+            -webkit-mask: url(../images/icons/heart.svg) no-repeat center;
+            mask-size: contain;
+            -webkit-mask-size: contain;
+            transition-duration: var(--transition-duration);
+            transition: all .3s ease;
+        }
+
+        @include hover {
+            &::after {
+                background: var(--color-dark-red);
+            }
+        }
+    }
+}
+
+
+/* Стили для модального окна */
+.modal {
+    display: none;
+    /* Скрываем модальное окно по умолчанию */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+
+    &-content {
+        position: relative;
+        background: var(--color-white);
+        padding: 30px 25px;
+        border-radius: var(--border-radius);
+        width: 380px;
+        text-align: center;
+
+        .close {
+            @include reset-button;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 30px;
+            line-height: 1;
+            color: var(--color-dark-gray);
+            cursor: pointer;
+        }
+
+        & h4 {
+            font-size: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        & p {
+            max-width: 300px;
+            font-weight: 400;
+        }
+
+        & form {
+            margin-top: 20px;
+
+            button[type="submit"] {
+                width: 100%;
+                height: 60px;
+
+                @include hover {
+                    color: var(--color-white);
+                    background: var(--color-red);
+                    border-color: var(--color-red);
+                }
+            }
+        }
     }
 }

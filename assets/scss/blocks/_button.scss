@@ -43,6 +43,8 @@
                 background: var(--color-red);
                 mask: url(../images/icons/heart-full.svg) no-repeat center;
                 -webkit-mask: url(../images/icons/heart-full.svg) no-repeat center;
+                mask-size: contain;
+                -webkit-mask-size: contain;
             }
         }
 
